@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './Components/Button';
+import Circle from './Components/Circle';
+import { useSelector } from 'react-redux';
 
-function App() {
+const App = () => {
+
+  const count = useSelector((state) => state.counter.value);
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Counter Redux</h1>
+      <Circle value={count} />
+      <div className="button-container">
+        <Button text="Increase 5"/>
+        <Button text="Increase 1"/>
+        <Button text="Reset"/>
+        <Button text="Decrease 1"/>
+        <Button text="Decrease 5"/>
+      </div>
+
     </div>
   );
 }
