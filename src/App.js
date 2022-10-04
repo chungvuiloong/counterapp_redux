@@ -15,6 +15,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Counter Redux</h1>
+      <div>Testing CI/ CD</div>
       <Circle value={count} />
       <div className="button-container">
         <Button text="Increase 10"  onClick={() => dispatch(incrementByAmount(10))} />
