@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app: #docker run -it -v ${PWD}:/work -w /work -p 5003:5000 jirimicvl/nodejs:0.0.1 /bin/sh
+    build:
+      context: .
+    volumes:
+      - ./counteredux
+    ports:
+      - 3010:3000
+    image: app:counteredux
+    container_name: counteredux_container
+    command: npm start

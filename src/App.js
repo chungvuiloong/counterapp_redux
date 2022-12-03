@@ -1,13 +1,10 @@
 import './App.css';
 import Button from './Components/Button';
 import Circle from './Components/Circle';
-import { selectCount as pikachu, reset, increment, decrement, incrementByAmount, decrementByAmount } from './features/counter/CounterSlice';
+import { selectCount as pikachu, reset, incrementByAmount, decrementByAmount } from './features/counter/CounterSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 const App = () => {
-
-  // const count = useSelector((state) => state.counter.value);
-  // const count = useSelector(selectCount);
   const count = useSelector(pikachu);
 
   let dispatch = useDispatch();
@@ -28,7 +25,7 @@ const App = () => {
         {/* <Button text="Decrease 1" onClick={() => dispatch(decrement())}/>  */}
         <Button text="Decrease 1"   onClick={() => dispatch(decrementByAmount(1))}/>
         <Button text="Decrease 5"   onClick={() => dispatch(decrementByAmount(5))}/>
-        <Button text="Decrease 5"   onClick={() => dispatch(decrementByAmount(10))}/>
+        <Button text="Decrease 10"   onClick={() => dispatch(decrementByAmount(10))}/>
       </div>
 
     </div>

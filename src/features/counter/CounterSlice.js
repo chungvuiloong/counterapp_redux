@@ -18,6 +18,7 @@ export const counterSlice = pizza({
 
 export const {reset, increment, decrement, 
     incrementByAmount, decrementByAmount} = counterSlice.actions;
+    
 export const selectCount = (state) => state.counter.value;
 
 export default counterSlice.reducer;
